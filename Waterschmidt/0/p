@@ -20,27 +20,30 @@ internalField   uniform 0;
 
 boundaryField
 {
-    sides
-    {
-        type            fixedFluxPressure;
-        phi             phi.water;
-        value           $internalField;
-    }
-
-    atmosphere
-    {
-        type            fixedFluxPressure;
-        phi             phi.water;
-        value           $internalField;
-    }
-
     walls
+    {
+        type            fixedFluxPressure;
+        phi             phi.water;
+        value           $internalField;
+    }
+
+    bottom
+    {
+        type            fixedFluxPressure;
+        phi             phi.water;
+        value           $internalField;
+    }
+
+    top
     {
         type            fixedValue;
         phi             phi.water;
         value           $internalField;
     }
-
+    frontAndBack
+    {
+        type            symmetry;
+    }
 
 }
 

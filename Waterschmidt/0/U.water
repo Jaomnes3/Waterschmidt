@@ -21,12 +21,12 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
-    sides
+    walls
     {
         type            noSlip;
     }
 
-    atmosphere
+    top
     {
         type            pressureInletOutletVelocity;
         phi             phi.water;
@@ -34,7 +34,7 @@ boundaryField
         value           uniform (0 0 0);
     }
 
-    walls
+    bottom
     {
         type            interstitialInletVelocity;
         inletVelocity   uniform (0 0 1.875);
@@ -42,7 +42,11 @@ boundaryField
         phi             phi.water;
         alpha           alpha.water;
     }
-
+    
+    frontAndBack
+    {
+        type            symmetry;
+    }
 
 }
 

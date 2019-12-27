@@ -101,7 +101,13 @@ subModels
     {
         patches
         (
-            atmosphere
+            top
+            {
+                type rebound;
+                e    0.97;
+                mu   0.09;
+            }
+            bottom
             {
                 type rebound;
                 e    0.97;
@@ -113,7 +119,7 @@ subModels
                 e    0.97;
                 mu   0.09;
             }
-            sides
+            frontAndBack
             {
                 type rebound;
                 e    0.97;
@@ -167,7 +173,7 @@ subModels
             cohesionEnergyDensity 0;
         };
 
-        U     U.air;
+        U     U.water;
     }
 
     stochasticCollisionModel none;
